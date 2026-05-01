@@ -1,1 +1,1 @@
-# application-desktop-CV-Manger
+# application-desktop-CV-Manger-python-pyside
