@@ -1,0 +1,36 @@
+cv_manager/
+│
+├── main.py                  ← Point d'entrée de l'app
+├── config.py                ← Paramètres globaux (DB path, etc.)
+├── requirements.txt
+│
+├── models/
+│   ├── __init__.py
+│   ├── database.py          ← Connexion SQLite
+│   ├── user.py              ← Classe User
+│   ├── cv.py                ← Classe CV
+│   └── skill.py             ← Classe Skill
+│
+├── controllers/
+│   ├── __init__.py
+│   ├── auth_controller.py   ← Login / rôles
+│   ├── cv_controller.py     ← Upload + analyse
+│   ├── skill_controller.py  ← Extraction NLP
+│   └── hr_controller.py     ← Filtres RH
+│
+├── views/
+│   ├── __init__.py
+│   ├── main_window.py       ← Fenêtre PySide6 principale
+│   ├── login_view.py        ← Formulaire login
+│   ├── student_view.py      ← Espace étudiant
+│   └── hr_view.py           ← Dashboard RH
+│
+├── services/
+│   ├── __init__.py
+│   ├── nlp_service.py       ← Analyse NLP des CV
+│   ├── score_service.py     ← Calcul du score
+│   └── file_service.py      ← Lecture PDF/texte
+│
+└── data/
+    ├── cv_manager.db        ← Base SQLite (auto-créée)
+    └── schema.sql           ← Script de création des tables

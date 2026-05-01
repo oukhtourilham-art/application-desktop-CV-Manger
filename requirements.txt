@@ -1,0 +1,13 @@
+# Interface graphique 
+PySide6>=6.5.0
+
+#Lecture de fichier PDF
+PyMuPDF>=1.23.0
+
+#Analyse NLP (traitement du txte)
+spacy>=3.7.0
+
+#Base de donnée (SQLite est intégré à Pytho)
+
+#Visualisation de donnée (pour les graphiques dans le dashboard RH)
+matplotlib>=3.7.0
