@@ -69,6 +69,9 @@ class NLPService:
         nlp = cls._charger_modele()
 
         # Normaliser le texte (minuscules, nettoyage)
+        texte_normalise = texte.lower()
+
+        # Analyse spaCy (tokenisation, lemmatisation)
         doc = nlp(texte_normalise)
 
         competences_trouvees = []

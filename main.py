@@ -10,11 +10,14 @@ def main():
     app = QApplication(sys.argv)
     app.setApplicationName(APP_NAME)
 
+
     #Créer et afficher la fenêtre principale
     window = MainWindow()
     window.setWindowTitle(APP_NAME)
     window.resize(WINDOW_WIDTH, WINDOW_HEIGHT)
     window.show()
+
+    sys.exit(app.exec())
 
 #Lancer la boucle principale
 if __name__ == "__main__":

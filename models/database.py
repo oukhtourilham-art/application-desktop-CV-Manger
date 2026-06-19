@@ -18,16 +18,23 @@ class Database:
             cls._instance = Database()
         return cls._instance
     
-    def _intialiser(self):
-        """Crée la base de donnée si elle n'existe pas encore"""
-        #Créer le dossier data/ si nécessaire
+    def _initialiser(self):
+        """Crée la base de données si elle n'existe pas encore"""
         os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
 
-        #Lire et exécuter le schema.sql
         schema_path = os.path.join(BASE_DIR, "data", "schema.sql")
+
+        # Vérifier que schema.sql existe
+        if not os.path.exists(schema_path):
+            print(f"ERREUR : schema.sql introuvable à {schema_path}")
+            return
+
         with self.connecter() as conn:
             with open(schema_path, "r", encoding="utf-8") as f:
-                conn.executescipt(f.read())
+                contenu = f.read()
+                print(f"Schema lu : {len(contenu)} caractères")  # debug
+                conn.executescript(contenu)
+                print("Tables créées avec succès")  # debug
 
     def connecter(self):
         """Ouvre et retourne une connexion SQLite"""

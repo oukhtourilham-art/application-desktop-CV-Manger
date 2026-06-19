@@ -6,11 +6,12 @@ from models.database import Database
 
 class CV:
     def __init__(self, id, user_id, filename, filepath, score=0, uploaded_at=None):
-        self.id            = id
-        self.user_id       = user_id
-        self.filename      = filename
-        self.filepath      = filepath
-        self.uploaded_at   = uploaded_at
+        self.id          = id
+        self.user_id     = user_id
+        self.filename    = filename
+        self.filepath    = filepath
+        self.score       = score        
+        self.uploaded_at = uploaded_at
 
     #  Méthodes statiques (opérations sur la BD)
     @staticmethod
@@ -21,7 +22,7 @@ class CV:
             "INSERT INTO cvs (user_id, filename, filepath) VALUES (?, ?, ?)",
             (user_id, filename, filepath)
         )
-        ret cv_id
+        return cv_id
         
     @staticmethod
     def trouver_par_id(cv_id):

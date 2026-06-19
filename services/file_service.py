@@ -24,7 +24,7 @@ class FileService:
         chemin_destination = os.path.join(dossier_user, nom_fichier)
 
         #Copier le fichier
-        shutil.copy2(filepath_source, nom_fichier)
+        shutil.copy2(filepath_source, chemin_destination)
 
         return chemin_destination, nom_fichier
     
